@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +12,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 
-  <link href="css/bootstrap.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body class="d-flex flex-column h-100">
 
@@ -70,6 +72,6 @@
       <small>&copy; Blog 2020 | All Rights Reserved.</small></div>
     </div>
   </nav>
-  <script src="js/bootstrap.js"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
 </body>
 </html>
