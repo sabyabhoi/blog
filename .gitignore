@@ -1,2 +1,4 @@
 .vscode/
 backend/backend/keys.py
+backend/db.sqlite3
+backend/backend/media/
