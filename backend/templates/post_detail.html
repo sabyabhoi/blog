@@ -5,9 +5,9 @@
 {% load filters %}
 
 <div class="blog-body my-3">
-  <h1 id="blog-title">{% block title %} {{ object.title }} {% endblock title %}</h1>
-  <div class="mb-1 text-muted pb-1">By {{post.author|cut}}, on {{post.updated_on}}</div>
-  <p>{{post.content}}</p>
+  <h1 id="blog-title" class="px-2">{% block title %} {{ object.title }} {% endblock title %}</h1>
+  <div class="mb-1 text-muted pb-1 px-2">By {{post.author|cut}}, on {{post.updated_on}}</div>
+  <p class="px-2 pb-5">{{post.content}}</p>
 </div>
 
 {%endblock content%}

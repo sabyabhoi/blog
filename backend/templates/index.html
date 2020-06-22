@@ -2,6 +2,8 @@
 {% block content %}
 
 {% load static %}
+
+
 {% load filters %}
   {% for post in post_list %}
     <div class="my-3 card flex-md-row mb-2 box-shadow h-md-250">
@@ -9,7 +11,7 @@
         <strong class="d-inline-block mb-3 text-primary">{{ post.author|cut }}</strong>
         <h4 class="card-title">{{ post.title }}</h4>
         <div class="mb-1 text-muted">{{ post.updated_on }}</div>
-        <p class="card-text">{{ post.content }}</p>
+        <p class="card-text">{{ post.description }}</p>
         <a href="{% url 'post_detail' post.slug %}">Read more</a>
       </div>
       <img src="{{ post.image.url }}" class="card-img-right flex-auto d-none d-md-block" alt="">

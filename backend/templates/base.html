@@ -14,12 +14,19 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body class="d-flex flex-column h-100">
-
-  <div class="container col-lg-8 col-sm-12">
+  <div id="overlay">
+    <div class="overlay-body form-group">
+      <h2>Subscribe to our newsletter</h2>
+      <input type="text" placeholder="Email" class="form-control" style="margin-bottom: 1rem;">
+      <button type="reset" class="btn btn-danger" onclick="off()">Cancel</button>
+      <button type="reset" class="btn btn-primary" onclick="off()">Submit</button>
+    </div>
+  </div>
+  <div class="container col-lg-8 col-sm-12 mb-5">
 
     <header class="blog-header py-2">
       <div class="row text-center align-items-center">
-        <div class="col-4 "><a href="#" id="blog-side" class="text-dark pt-1">Subscribe</a></div>
+        <div class="col-4 "><a id="blog-side" class="text-dark pt-1" onclick="on()">Subscribe</a></div>
         <div class="col-4 "><a href="{% url 'home' %}" id="blog-title" class="text-dark">Blog</a></div>
         <div class="col-4 "><a href="#" id="blog-side" class="text-dark pt-1">About</a></div>
       </div>
@@ -29,13 +36,22 @@
     {% endblock content %}
 
   </div>
-  <nav class="navbar fixed-bottom navbar-light bg-light">
+
+  <div class="footer py-2">
+    <div class="container row my-2">
+      <div class="col-4"></div>
+      <div class="col-4"><small>&copy; Blog 2020 | All Rights Reserved</small></div>
+    </div>
+  </div>
+
+  <!--<nav class="navbar fixed-bottom navbar-light bg-light">
     <div class="container row my-2">
       <div class="col-4"></div>
       <div class="col-4">
       <small>&copy; Blog 2020 | All Rights Reserved.</small></div>
     </div>
-  </nav>
+  </nav> -->
   <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
 </body>
 </html>

@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,800&display=swap');
 
+body {
+  background-image: url("../img/sample3.jpg");
+  background-repeat: no-repeat;
+  position: relative;
+}
+
 .blog-header {
+  background-color: #fff;
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -16,11 +23,42 @@ img {
   height: auto;
 }
 
+.blog-body {
+  background-color: #fff;
+}
+
 .card-img-right { 
   height: 100%;
   border-radius: 0 3px 3px 0;
 }
 
-.fixed-botton {
-  text-align: center !important;
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+
+}
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.overlay-body {
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  color: white;
 }
