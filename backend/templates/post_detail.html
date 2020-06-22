@@ -5,9 +5,25 @@
 {% load filters %}
 
 <div class="blog-body my-3">
-  <h1 id="blog-title" class="px-2">{% block title %} {{ object.title }} {% endblock title %}</h1>
+  <h1  class="title px-2">{{post.title}}</h1>
   <div class="mb-1 text-muted pb-1 px-2">By {{post.author|cut}}, on {{post.updated_on}}</div>
   <p class="px-2 pb-5">{{post.content}}</p>
 </div>
 
+<!--Comments-->
+
+<div class="comments">
+  <h1 class="title px-2 pb-2">Comments</h1>
+  {% for comment in comments %}
+  <div class="comment-body mb-4" style="padding: 10px;">
+    <p class="font-weight-bold">
+      {{ comment.name }}
+      <span class=" text-muted font-weight-normal">
+        {{ comment.created_on }}
+      </span>
+    </p>
+    {{ comment.body | linebreaks }}
+  </div>
+  {% endfor %}
+</div>
 {%endblock content%}
