@@ -23,3 +23,7 @@ def post_detail(request, slug):
     comment_form = CommentForm()
 
   return render(request, template_name, {'post': post, 'comments': comments, 'new_comment': new_comment, 'comment_form': comment_form})
+
+def about(request):
+  template_name = 'about.html'
+  return render(request, template_name, {})

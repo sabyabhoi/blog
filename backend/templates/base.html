@@ -33,7 +33,7 @@
       <div class="row text-center align-items-center">
         <div class="col-4 "><a id="blog-side" class="text-dark pt-1" onclick="on()">Subscribe</a></div>
         <div class="col-4 "><a href="{% url 'home' %}" class="title text-dark">The Vastavik</a></div>
-        <div class="col-4 "><a href="#" id="blog-side" class="text-dark pt-1">About</a></div>
+        <div class="col-4 "><a href="{% url 'about' %}" id="blog-side" class="text-dark pt-1">About</a></div>
       </div>
     </header>
 
@@ -42,9 +42,9 @@
 
   </div>
 
-  <div class="footer py-2 row">
-    <div class="container row my-2">
-      <div class="col-lg-4"></div>
+  <div class="footer py-2">
+    <div class="container my-2">
+      <div class="col-lg-4 col-sm-12"></div>
       <div class="col-lg-4"><small>&copy; The Vastavik 2020 | All Rights Reserved</small></div>
     </div>
   </div>
