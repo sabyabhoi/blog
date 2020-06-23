@@ -17,9 +17,10 @@
   <div id="overlay">
     <div class="overlay-body form-group">
       <h2>Subscribe to our newsletter</h2>
-      <input type="text" placeholder="Email" class="form-control" style="margin-bottom: 1rem;">
-      <button type="reset" class="btn btn-danger" onclick="off()">Cancel</button>
-      <button type="reset" class="btn btn-primary" onclick="off()">Submit</button>
+      <form method="POST">
+        <button type="reset" class="btn btn-danger" onclick="off()">Cancel</button>
+        <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+      </form>
     </div>
   </div>
   <div class="container col-lg-8 col-sm-12 mb-5">

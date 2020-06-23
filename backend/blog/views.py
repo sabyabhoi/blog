@@ -1,6 +1,7 @@
+from django.http import HttpResponseRedirect
 from django.views import generic
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, MailingForm
 from django.shortcuts import render, get_object_or_404
 
 class PostList(generic.ListView): 
