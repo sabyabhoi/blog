@@ -11,14 +11,15 @@ class PostList(generic.ListView):
 def post_detail(request, slug):
   template_name = 'post_detail.html'
   post = get_object_or_404(Post, slug=slug)
-  comments = post.comments.filter(active=True)
+  comments = post.comments.filter()
   new_comment = None
   if request.method == 'POST':
     comment_form = CommentForm(data=request.POST)
     if comment_form.is_valid():
       new_comment = comment_form.save(commit=False)
       new_comment.post = post
-      new_comment.save()
+      if not post.comments.filter(body=new_comment.body).exists(): # Check if the comment already exists
+        new_comment.save()
   else:
     comment_form = CommentForm()
 
@@ -26,4 +27,4 @@ def post_detail(request, slug):
 
 def about(request):
   template_name = 'about.html'
-  return render(request, template_name, {})
+  return render(request, template_name)

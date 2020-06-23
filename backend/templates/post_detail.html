@@ -26,18 +26,12 @@
   </div>
   {% endfor %}
 
-  {% if new_comment %}
-  <div class="alert alert-success" role="alert">
-    Your Comment is awaiting moderation
-  </div>
-  {% else %}
   <form method="POST" class="form-group pb-3 px-2">
   <h3 class="title" style="font-size: 2rem;">Leave a comment</h3>
     {% csrf_token %}
     {{comment_form.as_p}}
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-  {% endif %}
 
 </div>
 {%endblock content%}

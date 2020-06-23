@@ -9,7 +9,3 @@ def cut(value):
   surname = name[1].capitalize()
 
   return firstname + ' ' + surname
-
-@register.filter(name='add_class')
-def add_class(value, arg):
-  return value.as_widget(attrs = {'class': arg})
