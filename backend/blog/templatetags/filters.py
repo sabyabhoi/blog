@@ -2,6 +2,7 @@ from django import template
 
 register = template.Library()
 
+@register.filter(name='cut')
 def cut(value): 
   name = value.__str__().split('-')
   firstname = name[0].capitalize()
@@ -9,4 +10,6 @@ def cut(value):
 
   return firstname + ' ' + surname
 
-register.filter('cut', cut)
+@register.filter(name='add_class')
+def add_class(value, arg):
+  return value.as_widget(attrs = {'class': arg})
