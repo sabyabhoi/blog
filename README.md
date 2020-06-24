@@ -9,5 +9,7 @@
 ## Creating a new User
 
 Open up a shell to the directory containg `manage.py` and run the following command:
+
 `python manage.py createsuperuser`
+
 It will guide you through the process of creating a new User
