@@ -1,5 +1,5 @@
 .vscode/
-backend/backend/keys.py
-backend/db.sqlite3
-backend/backend/media/
-backend/blog/__pycache__/
+backend/keys.py
+backend/media/
+blog/__pycache__/
+db.sqlite3
