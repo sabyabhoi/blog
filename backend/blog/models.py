@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from markdown_deux import markdown
+
 STATUS = (
   (0, 'Draft'),
   (1, 'Publish')
@@ -25,6 +27,10 @@ class Post(models.Model):
 
   def __str__(self):
     return self.title
+
+  def get_markdown(self):
+    content = self.content
+    return markdown(content)
 
 class Comment(models.Model):
   post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
