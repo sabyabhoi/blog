@@ -1,5 +1,10 @@
 # The Vastavik
 
+## Requirements 
+- Python 3
+- Django
+- markdown-deux (Install using `pip`)
+
 ## Setting up the files
 
 1. Clone the repository on to your system
@@ -13,3 +18,4 @@ Open up a shell to the directory containg `manage.py` and run the following comm
 `python manage.py createsuperuser`
 
 It will guide you through the process of creating a new User
+**Note**: the format for the username of the super-user should be of the form `<firstname>-<lastname>`
