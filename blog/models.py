@@ -19,6 +19,7 @@ class Post(models.Model):
   content = models.TextField()
   description = models.TextField(blank=True) 
   image = models.ImageField(upload_to='images', blank=True)
+  likes = models.IntegerField(default=0)
 
   status = models.IntegerField(choices=STATUS, default=0)
 
@@ -31,6 +32,9 @@ class Post(models.Model):
   def get_markdown(self):
     content = self.content
     return markdown(content)
+
+  def increment_likes(self):
+    self.likes += 1
 
 class Comment(models.Model):
   post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')

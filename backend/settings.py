@@ -112,3 +112,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'backend/media')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+PINAX_LIKES_LIKABLE_MODELS = { 
+    "blog.Model": {}
+}

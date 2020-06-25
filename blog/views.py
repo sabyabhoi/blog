@@ -2,14 +2,10 @@ from django.http import HttpResponseRedirect
 from django.views import generic
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse, reverse_lazy
+from django.db.models import F 
 
 from .models import Post, Newsletter
 from .forms import CommentForm, NewsletterForm
-
-def LikeView(request, pk):
-  post = get_object_or_404(Post, id=request.POST.get('post_id'))
-  post.likes.add(request.user)
-  return HttpResponseRedirect(reverse('post_detail', args=[str(pk)]))
 
 class PostList(generic.ListView): 
   queryset = Post.objects.filter(status=1).order_by('-created_on') 
@@ -36,6 +32,13 @@ def post_detail(request, slug):
     comment_form = CommentForm()
 
   return render(request, template_name, {'post': post, 'comments': comments, 'new_comment': new_comment, 'comment_form': comment_form})
+
+def like(request, pk): # pk means Primary Key
+  post = get_object_or_404(Post, id=request.POST.get('post_id'))
+  post.increment_likes()
+  post.save()
+
+  return HttpResponseRedirect(reverse('home'))
 
 def base(request):
   template_name = 'base.html'
