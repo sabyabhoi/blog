@@ -14,6 +14,7 @@
 
   <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="shortcut icon" type="image/png" href="{% static 'img/logo.png' %}">
 </head>
 <body class="d-flex flex-column h-100">
   <div id="overlay">
@@ -32,7 +33,10 @@
     <header class="blog-header py-2">
       <div class="row text-center align-items-center">
         <div class="col-4 "><a id="blog-side" class="text-dark pt-1" onclick="on()">Subscribe</a></div>
-        <div class="col-4 "><a href="{% url 'home' %}" class="title text-dark">The Vastavik</a></div>
+        <div class="col-4 ">
+          <img src="{% static 'img/logo.png' %}" alt="Logo" class="d-inline-block align-top pt-2 pr-2" style="width: 3rem;"> 
+          <a href="{% url 'home' %}" class="title text-dark">The Vastavik</a>
+        </div>
         <div class="col-4 "><a href="{% url 'about' %}" id="blog-side" class="text-dark pt-1">About</a></div>
       </div>
     </header>
