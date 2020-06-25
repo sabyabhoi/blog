@@ -1,5 +1,5 @@
 # The Vastavik
-Making a change to see how this works
+
 ## Requirements 
 - Python 3
 - Django
