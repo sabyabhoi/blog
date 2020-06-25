@@ -43,3 +43,11 @@ class Comment(models.Model):
   
   def __str__(self):
     return 'Comment {} by {}'.format(self.body, self.name)
+
+class Newsletter(models.Model):
+  email = models.EmailField()
+  entered_on = models.DateTimeField(auto_now_add=True)
+  active = models.BooleanField(default=True)
+
+  def __str__(self):
+    return self.email

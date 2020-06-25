@@ -1,4 +1,4 @@
-from .models import Comment
+from .models import Comment, Newsletter
 from django import forms
 
 class CommentForm(forms.ModelForm):
@@ -10,3 +10,8 @@ class CommentForm(forms.ModelForm):
       'name': forms.TextInput(attrs={'class': 'form-control'}),
       'body': forms.Textarea(attrs={'class': 'form-control'})
     }
+
+class NewsletterForm(forms.ModelForm):
+  class Meta:
+    model = Newsletter
+    fields = ('email', )
