@@ -1,8 +1,15 @@
 from django.http import HttpResponseRedirect
 from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.urls import reverse, reverse_lazy
+
 from .models import Post, Newsletter
 from .forms import CommentForm, NewsletterForm
-from django.shortcuts import render, get_object_or_404
+
+def LikeView(request, pk):
+  post = get_object_or_404(Post, id=request.POST.get('post_id'))
+  post.likes.add(request.user)
+  return HttpResponseRedirect(reverse('post_detail', args=[str(pk)]))
 
 class PostList(generic.ListView): 
   queryset = Post.objects.filter(status=1).order_by('-created_on') 

@@ -19,5 +19,3 @@ Open up a shell to the directory containg `manage.py` and run the following comm
 
 It will guide you through the process of creating a new User
 **Note**: the format for the username of the super-user should be of the form `<firstname>-<lastname>`
-
-This is a new edit!
