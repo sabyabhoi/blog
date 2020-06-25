@@ -6,7 +6,7 @@ class CommentForm(forms.ModelForm):
     model = Comment
     fields = ('name', 'body')
 
-    widgets = {
+    widgets = {  # Not necessary; but used for setting the html attributes of the following tags
       'name': forms.TextInput(attrs={'class': 'form-control'}),
       'body': forms.Textarea(attrs={'class': 'form-control'})
     }

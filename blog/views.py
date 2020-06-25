@@ -15,16 +15,17 @@ def post_detail(request, slug):
   comments = post.comments.filter()
   new_comment = None
 
-  if request.method == 'POST':
+  if request.method == 'POST': # Check if the user is POSTing a comment 
     comment_form = CommentForm(data=request.POST)
+
     if comment_form.is_valid():
-      new_comment = comment_form.save(commit=False)
-      new_comment.post = post
+      new_comment = comment_form.save(commit=False) # Retrieve the comment but don't save it to the database yet
+      new_comment.post = post 
 
       if not post.comments.filter(body=new_comment.body).exists(): # Check if the comment already exists
-        new_comment.save()
+        new_comment.save() # Save the comment to database if it doesn't exist
 
-  else:
+  else: # If the user isn't posting a comment, then just display the comment form
     comment_form = CommentForm()
 
   return render(request, template_name, {'post': post, 'comments': comments, 'new_comment': new_comment, 'comment_form': comment_form})
